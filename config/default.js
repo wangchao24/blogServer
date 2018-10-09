@@ -3,7 +3,11 @@ module.exports = {
     session: {
         secret: 'myblog',
         key: 'myblog',
-        maxAge: 2592000000
+    },
+    cet: 'myBlog',
+    preLoad: {
+        name: 'myBlog',
+        admin: true
     },
     mongodb: 'mongodb://localhost:27017/myblog'
 }
