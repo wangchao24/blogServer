@@ -9,5 +9,5 @@ module.exports = {
         name: 'myBlog',
         admin: true
     },
-    mongodb: 'mongodb://localhost:27017/myblog'
+    mongodb: 'mongodb://blog:123456@119.29.117.120:27017/myblog'
 }
