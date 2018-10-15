@@ -40,7 +40,6 @@ router.post('/', function (req, res, next) {
         })
     }
     UserModel.getUserByName(name).then((user) => {
-        debugger;
         if (!user) {
             res.status(200).json({
                 status: '700',

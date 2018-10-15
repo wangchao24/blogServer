@@ -42,7 +42,8 @@ router.post('/create', function (req, res, next) {
                 title: req.body.title,
                 content: req.body.content,
                 author: decode.userName,
-                authorId: decode.userId
+                authorId: decode.userId,
+                articleId: req.body.articleId
             }
         }
     })
@@ -57,7 +58,11 @@ router.post('/create', function (req, res, next) {
 router.get('/detail', function (req, res, next) {
     let postId = req.query.id;
     PostModel.getPostById(postId).then((result) => {
-        res.json(result[0]);
+        res.send({
+            status: '200',
+            message: '查询成功',
+            data: result[0]
+        });
     })
 
 })

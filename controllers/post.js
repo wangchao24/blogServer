@@ -3,8 +3,19 @@ const ObjectId = require('mongoose').Types.ObjectId;
 
 //添加一篇文章
 let create = function (post) {
-    return PostModel.create(post);
+    //articleId 有就更新 没有就 新建
+     if(post.articleId){
+       
+     }else {
+          return PostModel.create(post);
+     }
+
+   
 }
+
+
+
+
 //通过id获取一篇文章
 let getPostById = function (id) {
     PostModel
@@ -30,6 +41,8 @@ let getPostById = function (id) {
             }
         ])
 }
+
+
 
 //查询文章列表
 let getPosts = function (authorId) {

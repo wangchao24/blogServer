@@ -56,7 +56,6 @@ router.post('/', function (req, res, next) {
             // 注册失败，异步删除上传的头像
             // 用户名被占用则跳回注册页，而不是错误页
         })
-
 })
 
 module.exports = router
