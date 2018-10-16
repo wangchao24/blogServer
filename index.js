@@ -25,12 +25,8 @@ mongoose.connect(config.mongodb, (err) => {
 })
 
 
-
-
-
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
+app.use(bodyParser.json({ limit: '50000kb' }));
+app.use(bodyParser.urlencoded({ limit: '50000kb', extended: true }));
 // app.use(bodyParser.json());
 // session 中间件
 app.use(session({

@@ -9,15 +9,9 @@ const jwt = require('jsonwebtoken');
 const config = require('config-lite')(__dirname)
 //文章主页
 router.post('/', (req, res, next) => {
-    let author = req.body.author;
-    jwt.verify(req.cookies.token, config.cet, (err, decode) => {
-        if (err) {
-            console.log(err);
-        } else {
-            console.log(decode);
-        }
-    })
-    PostModel.getPosts(author).then((result) => {
+
+    let query = req.body;
+    PostModel.getPosts(query).then((result) => {
         res.status(200).json(result)
     })
 })
